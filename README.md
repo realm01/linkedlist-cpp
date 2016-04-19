@@ -9,9 +9,9 @@ Methods
 
 LinkedList<TYPE> ll;
 
-ll.add([int]);              // add at the end of list
-ll.addh([int]);             // add at beginning of list
-ll.addb([pos], [int]);      // add at a specific position in the list
+ll.add([TYPE]);              // add at the end of list
+ll.addh([TYPE]);             // add at beginning of list
+ll.addb([pos], [TYPE]);      // add at a specific position in the list
 
 ll.del([pos]);              // delete element at specific position
 
