@@ -13,6 +13,10 @@
 * GNU General Public License for more details.
 */
 
+#ifndef NULL
+#define NULL 0
+#endif
+
 template <typename T>
 LinkedList<T>::LinkedList(void) {
   size = 0;
@@ -20,17 +24,8 @@ LinkedList<T>::LinkedList(void) {
 
 template <typename T>
 LinkedList<T>::~LinkedList(void) {
-  if(size != 0) {
-    Node* next_pos = first;
-    Node* curr_pos = next_pos;
-
-
-    for(unsigned int i = 0; i < size; i++) {
-      next_pos = curr_pos->next_item;
-      delete(curr_pos);
-      curr_pos = next_pos;
-    }
-  }
+  if(first != NULL)
+    delete first;
 }
 
 template <typename T>
@@ -129,4 +124,10 @@ T LinkedList<T>::get(const unsigned int& i) {
 template <typename T>
 LinkedList<T>::Node::Node(const T& item) {
   this->item = item;
+}
+
+template <typename T>
+LinkedList<T>::Node::~Node(void) {
+  if(next_item != NULL)
+    delete next_item;
 }

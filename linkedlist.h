@@ -26,6 +26,7 @@ class LinkedList {
         Node* next_item;
       public:
         Node(const T& item);
+        ~Node(void);
     };
     void push_to_pos(const unsigned int& i, const T& item);
     Node* first;
